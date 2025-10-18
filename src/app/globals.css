@@ -24,3 +24,61 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Tiptap Image Resize Styles */
+.ProseMirror img {
+  max-width: 100%;
+  height: auto;
+  cursor: pointer;
+  display: block;
+  margin: 1rem 0;
+}
+
+.ProseMirror img.ProseMirror-selectednode {
+  outline: 3px solid #4f46e5;
+  outline-offset: 2px;
+}
+
+/* Image resize handles */
+.ProseMirror .image-resizer {
+  position: relative;
+  display: inline-block;
+}
+
+.ProseMirror .image-resizer img {
+  display: block;
+}
+
+.ProseMirror .image-resizer__handle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #4f46e5;
+  border: 2px solid white;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.ProseMirror .image-resizer__handle--top-left {
+  top: -5px;
+  left: -5px;
+  cursor: nwse-resize;
+}
+
+.ProseMirror .image-resizer__handle--top-right {
+  top: -5px;
+  right: -5px;
+  cursor: nesw-resize;
+}
+
+.ProseMirror .image-resizer__handle--bottom-left {
+  bottom: -5px;
+  left: -5px;
+  cursor: nesw-resize;
+}
+
+.ProseMirror .image-resizer__handle--bottom-right {
+  bottom: -5px;
+  right: -5px;
+  cursor: nwse-resize;
+}
