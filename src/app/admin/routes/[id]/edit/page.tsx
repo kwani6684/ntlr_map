@@ -115,7 +115,7 @@ function EditRouteForm() {
 
       const { error: updateError } = await supabase
         .from("routes")
-        .update(updateData as any)
+        .update(updateData as never)
         .eq("id", routeId);
 
       if (updateError) throw updateError;
@@ -153,7 +153,7 @@ function EditRouteForm() {
 
         const { error: updateError } = await supabase
           .from("place_descriptions")
-          .update(updateData)
+          .update(updateData as never)
           .eq("id", place.description.id);
 
         if (updateError) throw updateError;
@@ -166,7 +166,7 @@ function EditRouteForm() {
 
         const { error: insertError } = await supabase
           .from("place_descriptions")
-          .insert([insertData]);
+          .insert([insertData as never]);
 
         if (insertError) throw insertError;
       }
